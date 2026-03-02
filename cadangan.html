@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- IMPORTANT FOR ANDROID -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday</title>
+
+<style>
+
+/* ===== GLOBAL STYLE ===== */
+body{
+    margin:0;
+    font-family: Arial, sans-serif;
+    overflow-x:hidden;
+}
+
+/* each page fills phone screen */
+.page{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+/* pastel backgrounds */
+#landing{ background:#FFF6F0; }
+#letter{ background:#DCD6F7; }
+#gallery{ background:#CFE8D5; }
+#ending{ background:#F7C8C8; }
+
+/* text scaling for mobile */
+h1{
+    font-size:6vw;
+    margin-bottom:10px;
+}
+
+p{
+    font-size:4vw;
+    max-width:500px;
+}
+
+/* buttons */
+button{
+    margin-top:20px;
+    padding:12px 20px;
+    border:none;
+    border-radius:20px;
+    background:white;
+    font-size:16px;
+    cursor:pointer;
+}
+
+/* menu icons */
+.menu{
+    display:flex;
+    gap:20px;
+    margin-top:30px;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+.icon{
+    background:white;
+    padding:15px;
+    border-radius:15px;
+    cursor:pointer;
+    width:90px;
+}
+
+/* images responsive */
+img{
+    max-width:90%;
+    height:auto;
+    border-radius:15px;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- ================= LANDING ================= -->
+<section id="landing" class="page">
+
+<h1>Happy Birthday, Salmon! 🎂</h1>
+<p>Close your eyes, make a wish, and tap where you want to go.</p>
+
+<!-- MENU ICONS -->
+<div class="menu">
+
+<div class="icon" onclick="goTo('letter')">
+💌<br>Letter
+</div>
+
+<div class="icon" onclick="goTo('gallery')">
+📸<br>Memories
+</div>
+
+<div class="icon" onclick="goTo('ending')">
+🎁<br>Ending
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= LETTER PAGE ================= -->
+<section id="letter" class="page">
+
+<h1>A Letter For You</h1>
+
+<p>
+Here is where your heartfelt birthday message goes.
+Write your poetic message here later.
+</p>
+
+<button onclick="goTo('landing')">⬅ Back</button>
+
+</section>
+
+<!-- ================= GALLERY ================= -->
+<section id="gallery" class="page">
+
+<h1>Memory Gallery</h1>
+
+<img src="https://via.placeholder.com/400x250" alt="memory">
+
+<p>Replace this image with your photos together.</p>
+
+<button onclick="goTo('landing')">⬅ Back</button>
+
+</section>
+
+<!-- ================= ENDING ================= -->
+<section id="ending" class="page">
+
+<h1>Thank You</h1>
+
+<p>Thank you for exploring this little birthday world.</p>
+
+<button onclick="goTo('landing')">⬅ Back</button>
+
+</section>
+
+<!-- ================= JAVASCRIPT ================= -->
+<script>
+
+/* smooth navigation between pages */
+function goTo(pageId){
+    document.getElementById(pageId)
+        .scrollIntoView({behavior:"smooth"});
+}
+
+</script>
+
+</body>
+</html>
