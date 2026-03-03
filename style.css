@@ -1,1 +1,488 @@
-.bo
+.bo/* =========================
+   INDEX PAGE (MENU)
+========================= */
+
+.index-page {
+    background: #f5f6fa;
+    font-family: Arial, sans-serif;
+}
+
+.index-page .menu-wrapper {
+    max-width: 520px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+}
+
+/* ======================
+   INDEX MENU LAYOUT
+====================== */
+
+.index-page .menu-title {
+    font-size: 32px;
+    font-weight: bold;
+    color: #222;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.index-page .menu-subtitle {
+    color: #666;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+
+.index-page .menu-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* ← ini bikin tengah */
+    gap: 18px;
+}
+
+.index-page .card {
+    width: 100%;
+    max-width: 420px;   /* biar tidak melebar */
+    background: white;
+    border-radius: 16px;
+    overflow: hidden;
+    text-decoration: none;
+    color: black;
+    box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+    transition: 0.25s ease;
+}
+
+.index-page .card img {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+.index-page .card-info {
+    padding: 14px;
+    text-align: left;
+}
+
+.index-page .card-title {
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.index-page .price {
+    color: #ff5722;
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.index-page .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 22px rgba(0,0,0,0.18);
+}
+
+/* ===== POPUP BACKGROUND ===== */
+.popup{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+
+    background:rgba(0,0,0,0.6);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+
+    z-index:999;
+}
+
+/* show popup */
+.popup.show{
+    display:flex;
+}
+
+/* popup box */
+.popup-content{
+    background:#FFF6F0;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    max-width:90%;
+    animation:popIn 0.5s ease;
+}
+
+/* image */
+.popup-img{
+    width:220px;
+    margin-bottom:15px;
+}
+
+/* animation */
+@keyframes popIn{
+    from{
+        transform:scale(0.6);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
+/* back button */
+#back-menu{
+    text-align:center;
+    margin-top:50px;
+}
+
+/* ===== BUTTON STYLE ===== */
+.back-btn{
+    display:inline-block;
+    text-decoration:none;
+    font-family:sans-serif;
+    font-size:16px;
+    padding:14px 28px;
+
+    color:#5a5a5a;
+    background:linear-gradient(
+        135deg,
+        #FDE2E4,
+        #E2F0CB,
+        #CDE7F0
+    );
+
+    border-radius:30px;
+    box-shadow:
+        0 6px 15px rgba(0,0,0,0.15);
+
+    transition:all 0.3s ease;
+}
+
+/* hover (desktop) */
+.back-btn:hover{
+    transform:translateY(-3px) scale(1.05);
+    box-shadow:
+        0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* tap effect (mobile) */
+.back-btn:active{
+    transform:scale(0.95);
+}
+
+/* ===== WISH PAGE ===== */
+.wish-page{
+    font-family: 'Poppins', sans-serif;
+    text-align:center;
+    margin:0;
+    padding:20px;
+
+    background: linear-gradient(
+        135deg,
+        #ffe6f0,
+        #fff6cc,
+        #e6f7ff
+    );
+
+    min-height:100vh;
+}
+
+.happy{
+    font-family: 'Pacifico', cursive;
+    font-size: 42px;
+    color:#ff4f81;
+    margin-top:20px;
+
+    text-shadow:
+        0 0 8px rgba(255,80,120,0.4),
+        0 0 18px rgba(255,120,160,0.3);
+
+    animation: floatTitle 3s ease-in-out infinite;
+}
+
+@keyframes floatTitle{
+    0%,100%{ transform:translateY(0); }
+    50%{ transform:translateY(-6px); }
+}
+
+.cake{
+    width:90%;
+    max-width:420px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.cake:hover{
+    transform:scale(1.05);
+}
+
+.cake:active{
+    transform:scale(0.95);
+}
+
+#confetti-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    pointer-events:none;
+    overflow:hidden;
+}
+
+.confetti{
+    position:absolute;
+    width:8px;
+    height:14px;
+    opacity:0.9;
+    animation:fall 3s linear forwards;
+}
+
+@keyframes fall{
+    0%{
+        transform:translateY(-20px) rotate(0);
+    }
+    100%{
+        transform:translateY(100vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.popup-content{
+    background:white;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    animation:popupShow 0.4s ease;
+}
+
+@keyframes popupShow{
+    from{
+        transform:scale(0.7);
+        opacity:0;
+    }
+    to{
+        transform:scale(1);
+        opacity:1;
+    }
+}
+
+
+
+/* ===== LETTER PAGE ===== */
+
+.letter-page{
+    margin:0;
+    padding:30px 15px;
+
+    background:
+        radial-gradient(circle at top, #fff6f0, #fdeff4);
+
+    font-family:'Poppins', sans-serif;
+}
+
+/* container surat */
+.letter-container{
+    max-width:700px;
+    margin:auto;
+    padding:45px 35px;
+
+    background:
+        radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+        #fffdf8;
+
+    background-size:40px 40px;
+
+    border-radius:12px;
+
+    box-shadow:
+        0 15px 35px rgba(0,0,0,0.08),
+        inset 0 0 30px rgba(0,0,0,0.04);
+
+    animation: paperReveal 1.2s ease forwards;
+    opacity:0;
+    transform:translateY(40px);
+}
+
+@keyframes paperReveal{
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+.letter-container::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+
+    background:
+        repeating-linear-gradient(
+            transparent,
+            transparent 28px,
+            rgba(0,0,0,0.03) 29px
+        );
+
+    pointer-events:none;
+}
+
+.letter-container::after{
+    content:"";
+    position:absolute;
+    inset:0;
+    border-radius:10px;
+    pointer-events:none;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255,255,255,0.6),
+        inset 0 -2px 6px rgba(0,0,0,0.05);
+}
+
+/* judul */
+.letter-title{
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    color:#ff6b8a;
+    text-align:center;
+    margin-bottom:25px;
+}
+
+/* isi surat */
+.letter-content{
+    text-align:justify;
+    text-justify:inter-word;
+    line-height:1.95;
+    font-size:16px;
+    color:#444;
+}
+
+.letter-content::first-letter{
+    font-family:'Playfair Display', serif;
+    font-size:48px;
+    float:left;
+    line-height:1;
+    padding-right:8px;
+    color:#ff8fab;
+}
+
+/* gambar */
+.letter-img{
+    width:220px;
+    margin-top:25px;
+}
+
+.particles{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    background-image:
+        radial-gradient(rgba(255,255,255,0.6) 1px, transparent 1px);
+    background-size:120px 120px;
+    animation: floatParticles 40s linear infinite;
+    opacity:0.4;
+}
+
+@keyframes floatParticles{
+    from{transform:translateY(0);}
+    to{transform:translateY(-200px);}
+}
+
+/* tombol kembali */
+#back-menu{
+    margin-top:30px;
+    text-align:center;
+}
+
+/* Gallery Page */
+
+.gallery-page{
+    margin:0;
+    padding:25px 15px;
+
+    font-family:'Poppins', sans-serif;
+
+    background:
+        linear-gradient(180deg,#fff6f0,#fdeff4);
+}
+
+.gallery-title{
+    text-align:center;
+    font-family:'Playfair Display', serif;
+    font-size:34px;
+    color:#ff7aa2;
+    margin-bottom:5px;
+}
+
+.gallery-sub{
+    text-align:center;
+    color:#777;
+    font-size:14px;
+    margin-bottom:25px;
+}
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(110px,1fr));
+    gap:14px;
+
+    max-width:650px;
+    margin:auto;
+    align-items:center;
+}
+
+.item{
+    overflow:hidden;
+    border-radius:16px;
+
+    box-shadow:0 6px 14px rgba(0,0,0,0.12);
+
+    background:white;
+}
+
+.item img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    transition:transform .4s ease, filter .4s ease;
+    cursor:pointer;
+}
+
+.item:hover img{
+    transform:scale(1.12);
+    filter:brightness(1.05);
+}
+
+.center{
+    grid-column:2;
+    grid-row:2;
+    transform:scale(1.08);
+}
+
+.lightbox{
+    position:fixed;
+    inset:0;
+
+    background:rgba(0,0,0,0.9);
+
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:999;
+}
+
+.lightbox img{
+    max-width:90%;
+    max-height:90%;
+    border-radius:15px;
+}
+
+.lightbox:target{
+    display:flex;
+}
