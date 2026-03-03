@@ -1,164 +1,61 @@
 <!DOCTYPE html>
 <html>
 <head>
-<head>
     <meta charset="UTF-8">
     <title>Memories</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" href="style.css">
+
+    <!-- font aesthetic -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&family=Playfair+Display&display=swap" rel="stylesheet">
 </head>
 
-<style>
+<body class="gallery-page">
 
-body{
-    background:#FFF6F0;
-    font-family:sans-serif;
-    margin:0;
-    padding:20px;
-}
-
-/* ===== GRID LAYOUT ===== */
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(3,1fr);
-    gap:15px;
-    max-width:600px;
-    margin:auto;
-    align-items:center;
-}
-
-/* kotak foto */
-.item{
-    overflow:hidden;
-    border-radius:15px;
-    box-shadow:0 4px 10px rgba(0,0,0,0.15);
-}
-
-/* gambar */
-.item img{
-    width:100%;
-    display:block;
-    transition:transform 0.4s ease;
-    cursor:pointer;
-}
-
-/* hover zoom */
-.item img:hover{
-    transform:scale(1.15);
-}
-
-/* birthday center */
-.center{
-    grid-column:2;
-    grid-row:2;
-    transform:scale(1.1);
-}
-
-/* ===== LIGHTBOX (FULLSCREEN) ===== */
-.lightbox{
-    position:fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.85);
-    display:none;
-    justify-content:center;
-    align-items:center;
-}
-
-.lightbox img{
-    max-width:90%;
-    max-height:90%;
-    border-radius:15px;
-}
-
-/* show when targeted */
-.lightbox:target{
-    display:flex;
-}
-
-/* back button */
-.back{
-    text-align:center;
-    margin-top:30px;
-}
-
-button{
-    padding:10px 20px;
-    border:none;
-    border-radius:10px;
-    background:#DCD6F7;
-    cursor:pointer;
-}
-
-</style>
-</head>
-
-<body class = "gallery-page">
-
-<h2 align="center">Memories ✿</h2>
+<h1 class="gallery-title">Memories ✿</h1>
+<p class="gallery-sub">moments we never really left behind</p>
 
 <div class="gallery">
 
-<a href="#img1" class="item">
-<img src="foto1.jpeg">
-</a>
+    <a href="#img1" class="item">
+        <img src="foto1.jpeg">
+    </a>
 
-<a href="#img2" class="item">
-<img src="foto2.jpeg">
-</a>
+    <a href="#img2" class="item">
+        <img src="foto2.jpeg">
+    </a>
 
-<a href="#img3" class="item">
-<img src="foto3.jpeg">
-</a>
+    <a href="#img3" class="item">
+        <img src="foto3.jpeg">
+    </a>
 
-<!-- CENTER IMAGE -->
-<a href="#img5" class="item center">
-<img src="birthday boy.svg">
-</a>
+    <!-- CENTER IMAGE -->
+    <a href="#img5" class="item center">
+        <img src="birthday boy.svg">
+    </a>
 
-<a href="#img4" class="item">
-<img src="foto4.jpeg">
-</a>
+    <a href="#img4" class="item">
+        <img src="foto4.jpeg">
+    </a>
 
-<a href="#img6" class="item">
-<img src="foto1.jpeg">
-</a>
+    <a href="#img6" class="item">
+        <img src="foto1.jpeg">
+    </a>
 
 </div>
 
+<!-- LIGHTBOX -->
 
-<!-- ===== LIGHTBOX FULLSCREEN ===== -->
-
-<div id="img1" class="lightbox">
-<a href="#"><img src="foto1.jpeg"></a>
-</div>
-
-<div id="img2" class="lightbox">
-<a href="#"><img src="foto2.jpeg"></a>
-</div>
-
-<div id="img3" class="lightbox">
-<a href="#"><img src="foto3.jpeg"></a>
-</div>
-
-<div id="img4" class="lightbox">
-<a href="#"><img src="foto4.jpeg"></a>
-</div>
-
-<div id="img5" class="lightbox">
-<a href="#"><img src="birthday boy.svg"></a>
-</div>
-
-<div id="img6" class="lightbox">
-<a href="#"><img src="foto1.jpeg"></a>
-</div>
+<div id="img1" class="lightbox"><a href="#"><img src="foto1.jpeg"></a></div>
+<div id="img2" class="lightbox"><a href="#"><img src="foto2.jpeg"></a></div>
+<div id="img3" class="lightbox"><a href="#"><img src="foto3.jpeg"></a></div>
+<div id="img4" class="lightbox"><a href="#"><img src="foto4.jpeg"></a></div>
+<div id="img5" class="lightbox"><a href="#"><img src="birthday boy.svg"></a></div>
+<div id="img6" class="lightbox"><a href="#"><img src="foto1.jpeg"></a></div>
 
 <div class="back">
-<a href="index.html">
-<button>Kembali</button>
-</a>
+    <a href="index.html" class="back-btn">← Back to Menu</a>
 </div>
 
 </body>
